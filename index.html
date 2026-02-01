@@ -1,18 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Idham Kohar Nazarudin — Backend Developer</title>
-    <meta name="description" content="Backend Developer specializing in Laravel, Node.js, and Vue.js. Building scalable enterprise applications.">
-    
+    <meta name="description"
+        content="Backend Developer specializing in Laravel, Node.js, and Vue.js. Building scalable enterprise applications.">
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    
+
     <style>
         * {
             margin: 0;
@@ -29,7 +36,7 @@
             --color-border: #e2e8f0;
             --color-surface: #f8fafc;
             --color-card-bg: #ffffff;
-            
+
             --font-display: 'Playfair Display', serif;
             --font-body: 'Inter', sans-serif;
         }
@@ -65,7 +72,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: 
+            background-image:
                 linear-gradient(var(--color-border) 1px, transparent 1px),
                 linear-gradient(90deg, var(--color-border) 1px, transparent 1px);
             background-size: 50px 50px;
@@ -75,8 +82,13 @@
         }
 
         @keyframes gridMove {
-            0% { transform: translate(0, 0); }
-            100% { transform: translate(50px, 50px); }
+            0% {
+                transform: translate(0, 0);
+            }
+
+            100% {
+                transform: translate(50px, 50px);
+            }
         }
 
         /* Floating Gradient Orbs */
@@ -117,10 +129,23 @@
         }
 
         @keyframes float {
-            0%, 100% { transform: translate(0, 0) rotate(0deg); }
-            25% { transform: translate(50px, -50px) rotate(90deg); }
-            50% { transform: translate(-50px, 50px) rotate(180deg); }
-            75% { transform: translate(50px, 50px) rotate(270deg); }
+
+            0%,
+            100% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+
+            25% {
+                transform: translate(50px, -50px) rotate(90deg);
+            }
+
+            50% {
+                transform: translate(-50px, 50px) rotate(180deg);
+            }
+
+            75% {
+                transform: translate(50px, 50px) rotate(270deg);
+            }
         }
 
         /* Header */
@@ -350,6 +375,7 @@
                 opacity: 0;
                 transform: translateY(-30px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -374,6 +400,7 @@
                 opacity: 0;
                 transform: translateY(30px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -1019,6 +1046,7 @@
             .main {
                 padding-top: calc(var(--header-height-mobile) + 8px);
             }
+
             .hero {
                 min-height: calc(100vh - (var(--header-height-mobile) + 8px));
                 padding-top: 0.5rem;
@@ -1039,6 +1067,7 @@
                 right: -110%;
                 width: min(88%, 320px);
             }
+
             .nav-links.active {
                 right: 0;
             }
@@ -1050,25 +1079,61 @@
         }
 
         @media (max-width: 900px) {
-            .orb-1 { width: 360px; height: 360px; top: -140px; right: -140px; opacity: 0.12; filter: blur(64px); }
-            .orb-2 { width: 300px; height: 300px; bottom: -120px; left: -120px; }
-            .orb-3 { width: 220px; height: 220px; top: 45%; left: 60%; opacity: 0.1; }
+            .orb-1 {
+                width: 360px;
+                height: 360px;
+                top: -140px;
+                right: -140px;
+                opacity: 0.12;
+                filter: blur(64px);
+            }
+
+            .orb-2 {
+                width: 300px;
+                height: 300px;
+                bottom: -120px;
+                left: -120px;
+            }
+
+            .orb-3 {
+                width: 220px;
+                height: 220px;
+                top: 45%;
+                left: 60%;
+                opacity: 0.1;
+            }
         }
 
         @media (max-width: 420px) {
-            .orb-1 { width: 260px; height: 260px; top: -100px; right: -100px; }
-            .orb-2 { width: 220px; height: 220px; bottom: -90px; left: -90px; }
-            .orb-3 { display: none; }
+            .orb-1 {
+                width: 260px;
+                height: 260px;
+                top: -100px;
+                right: -100px;
+            }
+
+            .orb-2 {
+                width: 220px;
+                height: 220px;
+                bottom: -90px;
+                left: -90px;
+            }
+
+            .orb-3 {
+                display: none;
+            }
         }
 
         .project-card {
             will-change: transform, opacity;
         }
 
-        .logo::after { bottom: -4px; }
+        .logo::after {
+            bottom: -4px;
+        }
 
         .nav-links a:focus {
-            outline: 3px solid rgba(37,99,235,0.15);
+            outline: 3px solid rgba(37, 99, 235, 0.15);
             outline-offset: 4px;
         }
 
@@ -1078,6 +1143,7 @@
         }
     </style>
 </head>
+
 <body>
     <div id="app">
         <!-- Animated Background -->
@@ -1096,24 +1162,22 @@
                     <li><a href="#contact" @click="closeMenu">{{ t.nav.contact }}</a></li>
                     <li class="mobile-controls">
                         <div class="controls">
-                            <button
-                                class="control-btn"
-                                :class="{ active: currentLang === 'en' }"
+                            <button class="control-btn" :class="{ active: currentLang === 'en' }"
                                 @click="setLanguage('en')">
                                 EN
                             </button>
-                            <button
-                                class="control-btn"
-                                :class="{ active: currentLang === 'id' }"
+                            <button class="control-btn" :class="{ active: currentLang === 'id' }"
                                 @click="setLanguage('id')">
                                 ID
                             </button>
                             <button class="control-btn theme-toggle" @click="toggleTheme" :title="t.theme">
                                 <svg v-if="isDark" viewBox="0 0 24 24">
-                                    <path d="M12 18a6 6 0 1 1 0-12 6 6 0 0 1 0 12zm0-2a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM11 1h2v3h-2V1zm0 19h2v3h-2v-3zM3.515 4.929l1.414-1.414L7.05 5.636 5.636 7.05 3.515 4.93zM16.95 18.364l1.414-1.414 2.121 2.121-1.414 1.414-2.121-2.121zm2.121-14.85l1.414 1.415-2.121 2.121-1.414-1.414 2.121-2.121zM5.636 16.95l1.414 1.414-2.121 2.121-1.414-1.414 2.121-2.121zM23 11v2h-3v-2h3zM4 11v2H1v-2h3z"/>
+                                    <path
+                                        d="M12 18a6 6 0 1 1 0-12 6 6 0 0 1 0 12zm0-2a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM11 1h2v3h-2V1zm0 19h2v3h-2v-3zM3.515 4.929l1.414-1.414L7.05 5.636 5.636 7.05 3.515 4.93zM16.95 18.364l1.414-1.414 2.121 2.121-1.414 1.414-2.121-2.121zm2.121-14.85l1.414 1.415-2.121 2.121-1.414-1.414 2.121-2.121zM5.636 16.95l1.414 1.414-2.121 2.121-1.414-1.414 2.121-2.121zM23 11v2h-3v-2h3zM4 11v2H1v-2h3z" />
                                 </svg>
                                 <svg v-else viewBox="0 0 24 24">
-                                    <path d="M10 7a7 7 0 0 0 12 4.9v.1c0 5.523-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2h.1A6.979 6.979 0 0 0 10 7zm-6 5a8 8 0 0 0 15.062 3.762A9 9 0 0 1 8.238 4.938 7.999 7.999 0 0 0 4 12z"/>
+                                    <path
+                                        d="M10 7a7 7 0 0 0 12 4.9v.1c0 5.523-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2h.1A6.979 6.979 0 0 0 10 7zm-6 5a8 8 0 0 0 15.062 3.762A9 9 0 0 1 8.238 4.938 7.999 7.999 0 0 0 4 12z" />
                                 </svg>
                             </button>
                         </div>
@@ -1121,33 +1185,27 @@
                 </ul>
                 <div class="desktop-controls">
                     <div class="controls">
-                        <button
-                            class="control-btn"
-                            :class="{ active: currentLang === 'en' }"
+                        <button class="control-btn" :class="{ active: currentLang === 'en' }"
                             @click="setLanguage('en')">
                             EN
                         </button>
-                        <button
-                            class="control-btn"
-                            :class="{ active: currentLang === 'id' }"
+                        <button class="control-btn" :class="{ active: currentLang === 'id' }"
                             @click="setLanguage('id')">
                             ID
                         </button>
                         <button class="control-btn theme-toggle" @click="toggleTheme" :title="t.theme">
                             <svg v-if="isDark" viewBox="0 0 24 24">
-                                <path d="M12 18a6 6 0 1 1 0-12 6 6 0 0 1 0 12zm0-2a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM11 1h2v3h-2V1zm0 19h2v3h-2v-3zM3.515 4.929l1.414-1.414L7.05 5.636 5.636 7.05 3.515 4.93zM16.95 18.364l1.414-1.414 2.121 2.121-1.414 1.414-2.121-2.121zm2.121-14.85l1.414 1.415-2.121 2.121-1.414-1.414 2.121-2.121zM5.636 16.95l1.414 1.414-2.121 2.121-1.414-1.414 2.121-2.121zM23 11v2h-3v-2h3zM4 11v2H1v-2h3z"/>
+                                <path
+                                    d="M12 18a6 6 0 1 1 0-12 6 6 0 0 1 0 12zm0-2a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM11 1h2v3h-2V1zm0 19h2v3h-2v-3zM3.515 4.929l1.414-1.414L7.05 5.636 5.636 7.05 3.515 4.93zM16.95 18.364l1.414-1.414 2.121 2.121-1.414 1.414-2.121-2.121zm2.121-14.85l1.414 1.415-2.121 2.121-1.414-1.414 2.121-2.121zM5.636 16.95l1.414 1.414-2.121 2.121-1.414-1.414 2.121-2.121zM23 11v2h-3v-2h3zM4 11v2H1v-2h3z" />
                             </svg>
                             <svg v-else viewBox="0 0 24 24">
-                                <path d="M10 7a7 7 0 0 0 12 4.9v.1c0 5.523-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2h.1A6.979 6.979 0 0 0 10 7zm-6 5a8 8 0 0 0 15.062 3.762A9 9 0 0 1 8.238 4.938 7.999 7.999 0 0 0 4 12z"/>
+                                <path
+                                    d="M10 7a7 7 0 0 0 12 4.9v.1c0 5.523-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2h.1A6.979 6.979 0 0 0 10 7zm-6 5a8 8 0 0 0 15.062 3.762A9 9 0 0 1 8.238 4.938 7.999 7.999 0 0 0 4 12z" />
                             </svg>
                         </button>
                     </div>
                 </div>
-                <button
-                    class="menu-toggle"
-                    :class="{ active: menuOpen }"
-                    @click="toggleMenu"
-                    aria-label="Toggle menu">
+                <button class="menu-toggle" :class="{ active: menuOpen }" @click="toggleMenu" aria-label="Toggle menu">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -1237,27 +1295,40 @@
                         <h2 class="section-title">{{ t.contact.title }}</h2>
                     </div>
                     <div class="contact-grid">
-                        <a href="mailto:idhamkoharnazarudin@gmail.com" class="contact-card">
-                            <span class="contact-icon">📧</span>
+                        <a href="mailto:idhamkohar361@gmail.com" class="contact-card">
+                            <span class="contact-icon">
+                                <i class="fa-solid fa-envelope"></i>
+                            </span>
                             <span class="contact-label">Email</span>
-                            <span class="contact-value">idhamkoharnazarudin@gmail.com</span>
+                            <span class="contact-value">idhamkohar361@gmail.com</span>
                         </a>
-                        <a href="https://linkedin.com/in/idham-kohar" target="_blank" rel="noopener" class="contact-card">
-                            <span class="contact-icon">💼</span>
+
+                        <a href="https://linkedin.com/in/idham-kohar" target="_blank" rel="noopener"
+                            class="contact-card">
+                            <span class="contact-icon">
+                                <i class="fa-brands fa-linkedin"></i>
+                            </span>
                             <span class="contact-label">LinkedIn</span>
                             <span class="contact-value">linkedin.com/in/idham-kohar</span>
                         </a>
+
                         <a href="https://github.com/idham-kohar" target="_blank" rel="noopener" class="contact-card">
-                            <span class="contact-icon">💻</span>
+                            <span class="contact-icon">
+                                <i class="fa-brands fa-github"></i>
+                            </span>
                             <span class="contact-label">GitHub</span>
                             <span class="contact-value">github.com/idham-kohar</span>
                         </a>
+
                         <a href="tel:+6281233449899" class="contact-card">
-                            <span class="contact-icon">📱</span>
+                            <span class="contact-icon">
+                                <i class="fa-solid fa-phone"></i>
+                            </span>
                             <span class="contact-label">Phone</span>
                             <span class="contact-value">+62 812 3344 9899</span>
                         </a>
                     </div>
+
                 </div>
             </section>
         </main>
@@ -1269,7 +1340,7 @@
                 <li><a href="#projects">{{ t.footer.projects }}</a></li>
                 <li><a href="#contact">{{ t.footer.contact }}</a></li>
             </ul>
-            <p class="footer-text">{{ t.footer.copyright }}</p>
+            <p class="footer-text">© {{ currentYear }} Idham Kohar Nazarudin. All rights reserved.</p>
         </footer>
     </div>
 
@@ -1300,9 +1371,10 @@
                             about: {
                                 label: 'About Me',
                                 title: 'Crafting Solutions',
-                                description: 'Over two years of experience developing enterprise applications at BMD Syariah Indonesia, serving 43 branches and 8 divisions with robust backend systems.',
-                                description2: 'I specialize in creating scalable architectures, implementing real-time features, and integrating complex third-party services. My focus is on writing clean, maintainable code that solves real business problems.'
+                                description: 'Over four years of experience developing enterprise-grade applications, supporting multi-branch operations and cross-division workflows with robust backend systems.',
+                                description2: 'I specialize in designing scalable architectures, implementing real-time features, and integrating complex third-party services. My focus is on writing clean, maintainable code that solves real business problems.'
                             },
+
                             skills: {
                                 languages: 'Languages',
                                 frameworks: 'Frameworks',
@@ -1362,9 +1434,10 @@
                             about: {
                                 label: 'Tentang Saya',
                                 title: 'Menciptakan Solusi',
-                                description: 'Lebih dari dua tahun pengalaman mengembangkan aplikasi enterprise di BMD Syariah Indonesia, melayani 43 cabang dan 8 divisi dengan sistem backend yang robust.',
-                                description2: 'Saya spesialisasi dalam membuat arsitektur yang scalable, mengimplementasikan fitur real-time, dan mengintegrasikan layanan pihak ketiga yang kompleks. Fokus saya adalah menulis kode yang bersih dan maintainable yang menyelesaikan masalah bisnis nyata.'
+                                description: 'Lebih dari dua tahun pengalaman mengembangkan aplikasi enterprise, mendukung operasional multi-cabang dan lintas divisi dengan sistem backend yang andal.',
+                                description2: 'Saya spesialisasi dalam merancang arsitektur yang scalable, mengimplementasikan fitur real-time, serta mengintegrasikan layanan pihak ketiga yang kompleks. Fokus saya adalah menulis kode yang bersih, maintainable, dan mampu menyelesaikan permasalahan bisnis nyata.'
                             },
+
                             skills: {
                                 languages: 'Bahasa',
                                 frameworks: 'Framework',
@@ -1411,6 +1484,9 @@
                 };
             },
             computed: {
+                currentYear() {
+                    return new Date().getFullYear();
+                },
                 t() {
                     return this.translations[this.currentLang];
                 }
@@ -1466,23 +1542,24 @@
                 // Load saved preferences
                 const savedTheme = localStorage.getItem('theme');
                 const savedLang = localStorage.getItem('language');
-                
+
                 if (savedTheme === 'dark') {
                     this.isDark = true;
                     document.documentElement.setAttribute('data-theme', 'dark');
                 }
-                
+
                 if (savedLang) {
                     this.currentLang = savedLang;
                 }
 
                 // Scroll handler
                 window.addEventListener('scroll', this.handleScroll);
-                
+
                 // Initial reveal check
                 this.handleScroll();
             }
         }).mount('#app');
     </script>
 </body>
+
 </html>
