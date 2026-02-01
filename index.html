@@ -572,6 +572,111 @@
             line-height: 1.6;
         }
 
+        /* Skills Visual Section */
+        .skill-category {
+            margin-bottom: 2rem;
+        }
+
+        .skill-category:last-child {
+            margin-bottom: 0;
+        }
+
+        .skill-category-title {
+            font-weight: 600;
+            color: var(--color-accent);
+            font-size: 0.875rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .skill-icons {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .skill-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            background: var(--color-surface);
+            border-radius: 12px;
+            border: 1px solid var(--color-border);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .skill-icon:hover {
+            transform: translateY(-4px) scale(1.1);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.15);
+            border-color: var(--color-accent);
+            background: var(--color-card-bg);
+        }
+
+        [data-theme="dark"] .skill-icon:hover {
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+        }
+
+        .skill-icon img {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
+            filter: grayscale(20%);
+            transition: filter 0.3s ease;
+        }
+
+        .skill-icon:hover img {
+            filter: grayscale(0%);
+        }
+
+        /* Tooltip */
+        .skill-icon::after {
+            content: attr(title);
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 0.5rem 0.75rem;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            pointer-events: none;
+            z-index: 1000;
+        }
+
+        .skill-icon::before {
+            content: '';
+            position: absolute;
+            bottom: calc(100% - 5px);
+            left: 50%;
+            transform: translateX(-50%);
+            border: 5px solid transparent;
+            border-top-color: var(--color-text);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            pointer-events: none;
+            z-index: 1000;
+        }
+
+        .skill-icon:hover::after,
+        .skill-icon:hover::before {
+            opacity: 1;
+            visibility: visible;
+        }
+
         /* Projects */
         .projects-grid {
             display: grid;
@@ -1244,21 +1349,15 @@
                         </div>
                         <div class="about-card">
                             <div class="skills-grid">
-                                <div class="skill-item">
-                                    <span class="skill-label">{{ t.skills.languages }}</span>
-                                    <span class="skill-value">PHP, JavaScript, Python</span>
-                                </div>
-                                <div class="skill-item">
-                                    <span class="skill-label">{{ t.skills.frameworks }}</span>
-                                    <span class="skill-value">Laravel, Node.js, Vue.js, CodeIgniter</span>
-                                </div>
-                                <div class="skill-item">
-                                    <span class="skill-label">{{ t.skills.database }}</span>
-                                    <span class="skill-value">MySQL, SQL Server</span>
-                                </div>
-                                <div class="skill-item">
-                                    <span class="skill-label">{{ t.skills.tools }}</span>
-                                    <span class="skill-value">Git, Mapbox, Pusher, WhatsApp API</span>
+                                <div class="skill-category" v-for="(category, categoryKey) in t.skills.categories"
+                                    :key="categoryKey">
+                                    <h3 class="skill-category-title">{{ t.skills[categoryKey] }}</h3>
+                                    <div class="skill-icons">
+                                        <div class="skill-icon" v-for="skill in category" :key="skill.name"
+                                            :title="skill.name">
+                                            <img :src="skill.image" :alt="skill.name" />
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -1320,11 +1419,11 @@
                             <span class="contact-value">github.com/idham-kohar</span>
                         </a>
 
-                        <a href="tel:+6281233449899" class="contact-card">
+                        <a href="https://wa.me/6289618619880" class="contact-card" target="_blank">
                             <span class="contact-icon">
-                                <i class="fa-solid fa-phone"></i>
+                                <i class="fa-brands fa-whatsapp"></i>
                             </span>
-                            <span class="contact-label">Phone</span>
+                            <span class="contact-label">WhatsApp</span>
                             <span class="contact-value">+62 896 1861 9880</span>
                         </a>
                     </div>
@@ -1379,7 +1478,34 @@
                                 languages: 'Languages',
                                 frameworks: 'Frameworks',
                                 database: 'Database',
-                                tools: 'Tools & Services'
+                                tools: 'Tools & Services',
+                                categories: {
+                                    languages: [
+                                        { name: 'PHP', image: 'images/icons8-php.png' },
+                                        { name: 'JavaScript', image: 'images/128px-JavaScript-logo.png' },
+                                        { name: 'Python', image: 'images/python.png' }
+                                    ],
+                                    frameworks: [
+                                        { name: 'Laravel', image: 'images/laravel.png' },
+                                        { name: 'Node.js', image: 'images/iconfinder_Node_Js.png' },
+                                        { name: 'React.js', image: 'images/iconfinder_React.js.png' },
+                                        { name: 'Vue.js', image: 'images/vuejs.png' },
+                                        { name: 'Bootstrap', image: 'images/bootstrap_icon.png' },
+                                        { name: 'jQuery', image: 'images/iconfinder_JQuery.png' },
+                                        { name: 'Leaflet', image: 'images/leaflet.png' }
+                                    ],
+                                    database: [
+                                        { name: 'MySQL', image: 'images/mysql.png' },
+                                        { name: 'PostgreSQL', image: 'images/postgres-logo.png' },
+                                        { name: 'MongoDB', image: 'images/mongodb-480.png' }
+                                    ],
+                                    tools: [
+                                        { name: 'Git', image: 'images/git-icon.png' },
+                                        { name: 'Mapbox', image: 'images/mapbox.png' },
+                                        { name: 'HTML', image: 'images/iconfinder_HTML.png' },
+                                        { name: 'CSS3', image: 'images/iconfinder_css3.png' }
+                                    ]
+                                }
                             },
                             projects: {
                                 label: 'Portfolio',
@@ -1441,8 +1567,34 @@
                             skills: {
                                 languages: 'Bahasa',
                                 frameworks: 'Framework',
-                                database: 'Database',
-                                tools: 'Tools & Layanan'
+                                database: 'Basis Data',
+                                tools: 'Tools & Layanan',
+                                categories: {
+                                    languages: [
+                                        { name: 'PHP', image: 'images/icons8-php.png' },
+                                        { name: 'JavaScript', image: 'images/128px-JavaScript-logo.png' },
+                                        { name: 'Python', image: 'images/python.png' }
+                                    ],
+                                    frameworks: [
+                                        { name: 'Laravel', image: 'images/laravel.png' },
+                                        { name: 'Node.js', image: 'images/iconfinder_Node_Js.png' },
+                                        { name: 'React.js', image: 'images/iconfinder_React.js.png' },
+                                        { name: 'Bootstrap', image: 'images/bootstrap_icon.png' },
+                                        { name: 'jQuery', image: 'images/iconfinder_JQuery.png' },
+                                        { name: 'Leaflet', image: 'images/leaflet.png' }
+                                    ],
+                                    databases: [
+                                        { name: 'MySQL', image: 'images/mysql.png' },
+                                        { name: 'PostgreSQL', image: 'images/postgres-logo.png' },
+                                        { name: 'MongoDB', image: 'images/mongodb-480.png' }
+                                    ],
+                                    tools: [
+                                        { name: 'Git', image: 'images/git-icon.png' },
+                                        { name: 'Mapbox', image: 'images/mapbox.png' },
+                                        { name: 'HTML', image: 'images/iconfinder_HTML.png' },
+                                        { name: 'CSS3', image: 'images/iconfinder_css3.png' }
+                                    ]
+                                }
                             },
                             projects: {
                                 label: 'Portofolio',
